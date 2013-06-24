@@ -99,7 +99,7 @@ Drawing event flow is similar to the touches' UIEvent flow - from UIWindow to it
 	@end
 
 ### Statistics and monitoring
-CRAccessory class represents instance of connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
+CRAccessory class instance corresponds to physically connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
 
 	@interface CRAccessory : NSObject
 
@@ -116,4 +116,4 @@ CRAccessory represents state of accessory to application, the `screen` property 
 `receiverPowerLevel` represents receiver's battery state, iPad models of iPen2 have no additional batteries in receiver modules.
 
 ## Working with iPen
-#TBD
+TBD
