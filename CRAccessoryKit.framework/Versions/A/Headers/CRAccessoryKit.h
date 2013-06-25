@@ -11,5 +11,11 @@
 #import <CRAccessoryKit/CRDrawing.h>
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <CRAccessoryKit/UIViewDrawingAdditions.h>
+#import <Foundation/Foundation.h>
 
-#import <CRAccessoryKit/../PrivateHeaders/OnScreenLogger.h>
+@interface CRAccessoryKit : NSObject
+
++ (BOOL)start:(NSError**)error;
++ (void)stop;
+
+@end

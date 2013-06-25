@@ -20,7 +20,6 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 
 @property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
 
-+ (BOOL)turnOn;
 + (CRAccessoryManager*)sharedManager;
 
 @end
