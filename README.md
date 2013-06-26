@@ -30,13 +30,13 @@ but Xcode 3.2 is supported too. This version of SDK is built without authomatic 
 	* If your project is written on pure C/Objective-C, you need also to add libstdc++.dylid library for gcc compiler or libc++.dylib (recommended) for clang compiler
 	* Follow steps from item 2 for required library to add it to your project
 
-4. Modify your Info.plist file to manifest 'com.cregleipen.myProtocol' support to iOS
+4. Modify your Info.plist file to manifest __com.cregle.ipen2__ protocol support to iOS
 	* Select your Project in the Project Navigator
 	* Select "main" target, typically it is your application
 	* Switch to the Info tab
 	* If you don't have Supported external accessory protocols entry, right click on the table and select Add Row menu item
 	* Select Supported external accessory protocols item in dropdown menu
-	* Add 'com.cregleipen.myProtocol' item to the Supported external accessory protocols array
+	* Add __com.cregle.ipen2__ item to the Supported external accessory protocols array
 
 5. In your code
 	* call `[CRAccessoryKit start];` as soon as you intend to work with iPen
