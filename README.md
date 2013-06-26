@@ -1,4 +1,4 @@
-# Cregle AccessoryKit SDK Documentation
+# Cregle AccessoryKit SDK
 #### Documentation for version (0.0.1 alpha)
 
 ## Intro
