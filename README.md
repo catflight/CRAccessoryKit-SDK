@@ -115,5 +115,10 @@ CRAccessory represents state of accessory to application, the `screen` property 
 `penPowerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty.
 `receiverPowerLevel` represents receiver's battery state, iPad models of iPen2 have no additional batteries in receiver modules.
 
-## Working with iPen
-TBD
+## Testing
+To allow Cregle help you debug CRAccessoryKit integration, improve it and fix certain incompatibilities could have place, please feel free to invite us to [TestFlight](https://testflightapp.com/) Beta Testing of your app.
+
+Devices for TestFlight Beta Testing
+
+1. iPad 4 Wi-Fi:  __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
+
