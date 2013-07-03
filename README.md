@@ -1,4 +1,4 @@
-# Cregle AccessoryKit SDK Documentation
+# Cregle AccessoryKit SDK
 #### Documentation for version (0.0.1 alpha)
 
 ## Intro
@@ -30,13 +30,13 @@ but Xcode 3.2 is supported too. This version of SDK is built without authomatic 
 	* If your project is written on pure C/Objective-C, you need also to add libstdc++.dylid library for gcc compiler or libc++.dylib (recommended) for clang compiler
 	* Follow steps from item 2 for required library to add it to your project
 
-4. Modify your Info.plist file to manifest 'com.cregleipen.myProtocol' support to iOS
+4. Modify your Info.plist file to manifest __com.cregle.ipen2__ protocol support to iOS
 	* Select your Project in the Project Navigator
 	* Select "main" target, typically it is your application
 	* Switch to the Info tab
 	* If you don't have Supported external accessory protocols entry, right click on the table and select Add Row menu item
 	* Select Supported external accessory protocols item in dropdown menu
-	* Add 'com.cregleipen.myProtocol' item to the Supported external accessory protocols array
+	* Add __com.cregle.ipen2__ item to the Supported external accessory protocols array
 
 5. In your code
 	* call `[CRAccessoryKit start];` as soon as you intend to work with iPen
@@ -115,5 +115,10 @@ CRAccessory represents state of accessory to application, the `screen` property 
 `penPowerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty.
 `receiverPowerLevel` represents receiver's battery state, iPad models of iPen2 have no additional batteries in receiver modules.
 
-## Working with iPen
-TBD
+## Testing
+To allow Cregle help you debug CRAccessoryKit integration, improve it and fix certain incompatibilities could have place, please feel free to invite us to [TestFlight](https://testflightapp.com/) Beta Testing of your app.
+
+Devices for TestFlight Beta Testing
+
+1. iPad 4 Wi-Fi:  __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
+
