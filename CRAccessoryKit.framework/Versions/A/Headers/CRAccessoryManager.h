@@ -16,7 +16,7 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 
 @interface CRAccessoryManager : NSObject
 
-@property (nonatomic, readonly) NSArray* connectedAccessories;
+@property (nonatomic, readonly, copy) NSArray* connectedAccessories;
 
 @property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
 
