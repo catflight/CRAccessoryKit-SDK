@@ -8,7 +8,7 @@
 
 #import <CRAccessoryKit/CRAccessory.h>
 #import <CRAccessoryKit/CRAccessoryManager.h>
-#import <CRAccessoryKit/CRDrawing.h>
+#import <CRAccessoryKit/CRDrawingEvent.h>
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <CRAccessoryKit/UIViewDrawingAdditions.h>
 #import <Foundation/Foundation.h>

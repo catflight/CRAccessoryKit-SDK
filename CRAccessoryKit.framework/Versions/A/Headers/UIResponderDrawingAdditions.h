@@ -6,19 +6,18 @@
 //  Copyright (c) 2013 Cregle. All rights reserved.
 //
 
+#import <CRAccessoryKit/CRDrawingEvent.h>
 #import <UIKit/UIKit.h>
 
 @class CRAccessory;
-@class CRDrawing;
 
 @interface UIResponder (UIResponderDrawingAdditions)
 
-- (void)drawingBegan:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-- (void)drawingMoved:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-- (void)drawingEnded:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-- (void)drawingCancelled:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
+- (void)drawingsBegan:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
+- (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
+- (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 
-- (void)buttonDown:(NSUInteger)button withAccessory:(CRAccessory*)accessory;
-- (void)buttonUp:(NSUInteger)button withAccessory:(CRAccessory*)accessory;
+- (void)buttonDown:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
+- (void)buttonUp:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
 
 @end

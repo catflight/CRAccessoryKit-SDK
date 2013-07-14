@@ -6,13 +6,12 @@
 //  Copyright (c) 2013 Cregle. All rights reserved.
 //
 
-#import <CRAccessoryKit/CRDrawing.h>
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <UIKit/UIKit.h>
 
 @interface UIView (UIViewDrawingAdditions)
 
-- (UIView*)drawTest:(CGPoint)point withDrawind:(CRDrawing*)drawing;
-- (BOOL)drawingInside:(CGPoint)point withDrawing:(CRDrawing*)drawing;
+- (UIView*)drawTest:(CGPoint)point withAccessory:(CRAccessory*)accessory;
+- (BOOL)drawingInside:(CGPoint)point withAccessory:(CRAccessory*)accessory;
 
 @end

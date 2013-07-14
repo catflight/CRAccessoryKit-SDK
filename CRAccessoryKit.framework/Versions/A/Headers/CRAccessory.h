@@ -18,4 +18,6 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) float penPowerLevel;
 @property (nonatomic, readonly) float receiverPowerLevel;
 
+@property (nonatomic, readonly) NSUInteger buttonState;
+
 @end
