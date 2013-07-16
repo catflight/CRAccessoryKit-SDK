@@ -1,5 +1,5 @@
 # Cregle AccessoryKit SDK
-#### Documentation for version (0.0.1 alpha)
+#### Documentation for version (0.2 alpha)
 
 ## Intro
 
@@ -39,7 +39,7 @@ but Xcode 3.2 is supported too. This version of SDK is built without authomatic 
 	* Add __com.cregle.ipen2__ item to the Supported external accessory protocols array
 
 5. In your code
-	* call `[CRAccessoryKit start];` as soon as you intend to work with iPen
+	* call `[CRAccessoryKit start:];` as soon as you intend to work with iPen
 	* call `[CRAccessoryKit stop];` when you decide it's better to turn off accessory (e.g. to optimize power consumption)
 
 ## Program model
@@ -59,33 +59,32 @@ You could use it co adjust behaviour of accessory, iterate over connected access
 
 ### Drawing events
 
-All events from accessory (tip movements, button presses an so) are being delivered to application in CRDrawing class instances. This class incapsulates all information about certain event:
+Drawing gestures of stylus are being delivered to application in CRDrawingEvent class instances. This class incapsulates all information about certain event:
 
-	@interface CRDrawing : NSObject
+	@interface CRDrawingEvent : NSObject
 
 	@property(nonatomic,readonly) NSTimeInterval timestamp;
-	@property(nonatomic,readonly) CRDrawingPhase phase;
 	@property(nonatomic,readonly) float tipPressure;
-	@property(nonatomic,readonly) float previousTipPressure;
-	@property(nonatomic,readonly) NSIndexSet* buttonState;
 
 	- (CGPoint)locationInView:(UIView *)view;
-	- (CGPoint)previousLocationInView:(UIView *)view;
+
 	@end
 
 CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIResponder_Class/Reference/Reference.html) based event delivering mechanisn. CRAccessoryKit extends the UIResponder class with following category:
 
 	@interface UIResponder (UIResponderDrawingAdditions)
-	- (void)drawingBegan:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-	- (void)drawingMoved:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-	- (void)drawingEnded:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
-	- (void)drawingCancelled:(CRDrawing*)drawing withAccessory:(CRAccessory*)accessory;
+	
+	- (void)drawingsBegan:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
+	- (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
+	- (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 
-	- (void)buttonDown:(NSUInteger)button withAccessory:(CRAccessory*)accessory;
-	- (void)buttonUp:(NSUInteger)button withAccessory:(CRAccessory*)accessory;
+	- (void)buttonDown:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
+	- (void)buttonUp:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
+	
 	@end
 
-`drawing` methods are related to corresponding `touches` methods of UIResponder, but being triggered on stylus actions instead of finger touches. For now it is no 'multi-draw' support)
+`drawings` methods are related to corresponding `touches` methods of UIResponder, but being triggered on stylus actions instead of finger touches. For now it is no 'multi-draw' support)
+Each element in array passed to certain drawing callback method is instance of CRDrawingEvent, there are as mush elements in array as many reports (events) was received from stylus since previous method invocation (all callbacks are being called on main thread).
 `button` methods are close to desktop equivalent of UIResponder - [NSResponder](https://developer.apple.com/library/mac/#documentation/cocoa/reference/ApplicationKit/Classes/NSResponder_Class/Reference/Reference.html), and triggers when user presses corresponding buttons on accessory, regardless of tip location.
 
 Default implementation of these methods calls corresponding method of `self.nextResponder` object. To handle certain actions you should override corresponding methods in your UIView or UIViewController subclass,
@@ -94,8 +93,8 @@ no additinal registration required. Also you could implement your own UIResponde
 Drawing event flow is similar to the touches' UIEvent flow - from UIWindow to its subviews. UIView class extension provides additinal methods to help CRAccessoryManager deliver drawing events to proper view:
 
 	@interface UIView (UIViewDrawingAdditions)
-	- (UIView*)drawTest:(CGPoint)point withDrawind:(CRDrawing*)drawing;
-	- (BOOL)drawingInside:(CGPoint)point withDrawing:(CRDrawing*)drawing;
+	- (UIView*)drawTest:(CGPoint)point withAccessory:(CRAccessory*)accessory;
+	- (BOOL)drawingInside:(CGPoint)point withAccessory:(CRAccessory*)accessory;
 	@end
 
 ### Statistics and monitoring
@@ -108,6 +107,8 @@ CRAccessory class instance corresponds to physically connected accessory. You co
 
 	@property (nonatomic, readonly) float penPowerLevel;
 	@property (nonatomic, readonly) float receiverPowerLevel;
+
+	@property (nonatomic, readonly) NSUInteger buttonState;
 
 	@end
 
