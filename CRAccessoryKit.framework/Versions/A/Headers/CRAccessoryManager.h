@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Cregle Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 extern NSString* const CRAccessoryConnectedNotification;
 extern NSString* const CRAccessoryDisconnectedNotification;
@@ -19,6 +19,7 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 @property (nonatomic, readonly, copy) NSArray* connectedAccessories;
 
 @property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
+@property (nonatomic, assign) UIResponder* firstResponder;
 
 + (CRAccessoryManager*)sharedManager;
 
