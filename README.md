@@ -1,5 +1,5 @@
 # Cregle AccessoryKit SDK
-#### Documentation for version (0.2 alpha)
+#### Documentation for version (0.3 alpha)
 
 ## Intro
 
@@ -49,6 +49,7 @@ Central class in CRAccessoryKit is CRAccessoryManager
 
 	@property (nonatomic, readonly) NSArray* connectedAccessories;
 	@property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
+	@property (nonatomic, assign) UIResponder* firstResponder;
 
 	+ (CRAccessoryManager*)sharedManager;
 
@@ -96,6 +97,9 @@ Drawing event flow is similar to the touches' UIEvent flow - from UIWindow to it
 	- (UIView*)drawTest:(CGPoint)point withAccessory:(CRAccessory*)accessory;
 	- (BOOL)drawingInside:(CGPoint)point withAccessory:(CRAccessory*)accessory;
 	@end
+
+In some cases default drawing events dispatching mechanism isn't effective. It could be in case drawing view is placed under another view completelly or partially or it's desired to handle events outside certain view, application uses non-visual UIResponders to handle events from iPen, etc. In these cases property [CRAccessoryManager firstResponder] could be set to point required object for events handling.
+If the firstResponder property isn't nil, CRAccessoryManager will route ALL events to this responder directly, without invocation of UIView based method to select firstResponder.
 
 ### Statistics and monitoring
 CRAccessory class instance corresponds to physically connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
