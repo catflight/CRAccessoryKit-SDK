@@ -125,5 +125,8 @@ To allow Cregle help you debug CRAccessoryKit integration, improve it and fix ce
 
 Devices for TestFlight Beta Testing
 
-1. iPad 4 Wi-Fi:  __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
+iPad 4:
+
+1. __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
+2. __34f5dbe95db2f25087e550fffc16321cb7323e88__
 
