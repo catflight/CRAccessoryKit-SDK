@@ -13,6 +13,7 @@ extern float const CRPowerUndefined;
 @interface CRAccessory : NSObject
 
 @property (nonatomic, readonly) NSString* identifier;
+@property (nonatomic, readonly) NSString* penIdentifier;
 @property (nonatomic, readonly) UIScreen* screen;
 
 @property (nonatomic, readonly) float penPowerLevel;

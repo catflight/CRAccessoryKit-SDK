@@ -14,6 +14,8 @@ extern NSString* const CRAccessoryDisconnectedNotification;
 extern NSString* const CRAccessoryNotificationAccessoryKey;
 
 
+@class CRAccessory;
+
 @interface CRAccessoryManager : NSObject
 
 @property (nonatomic, readonly, copy) NSArray* connectedAccessories;
@@ -22,5 +24,7 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 @property (nonatomic, assign) UIResponder* firstResponder;
 
 + (CRAccessoryManager*)sharedManager;
+
+- (void)disconnectAccessory:(CRAccessory*)accessory;
 
 @end
