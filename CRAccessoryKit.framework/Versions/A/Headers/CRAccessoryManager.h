@@ -20,11 +20,13 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 
 @property (nonatomic, readonly, copy) NSArray* connectedAccessories;
 
-@property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
+@property (nonatomic) BOOL automaticallyRejectsPalmWhileDrawing;
+
+@property (nonatomic) BOOL allowsHoveringEvents;
+@property (nonatomic) BOOL sendsEditingActions;
+
 @property (nonatomic, assign) UIResponder* firstResponder;
 
 + (CRAccessoryManager*)sharedManager;
-
-- (void)disconnectAccessory:(CRAccessory*)accessory;
 
 @end
