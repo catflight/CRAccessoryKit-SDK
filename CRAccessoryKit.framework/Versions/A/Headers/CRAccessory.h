@@ -18,6 +18,8 @@ typedef enum CRSideButtonAction
 	CRSideButtonActionSave
 } CRSideButtonAction;
 
+typedef uint32_t CRButtonState;
+
 
 extern float const CRPowerUndefined;
 
@@ -32,7 +34,7 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) float penPowerLevel;
 @property (nonatomic, readonly) float receiverPowerLevel;
 
-@property (nonatomic, readonly) NSUInteger buttonState;
+@property (nonatomic, readonly) CRButtonState buttonState;
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
 @end
