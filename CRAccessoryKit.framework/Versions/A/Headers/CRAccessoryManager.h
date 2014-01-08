@@ -15,18 +15,22 @@ extern NSString* const CRAccessoryNotificationAccessoryKey;
 
 
 @class CRAccessory;
+@class CRGestureRecognizer;
 
 @interface CRAccessoryManager : NSObject
 
-@property (nonatomic, readonly, copy) NSArray* connectedAccessories;
+@property (nonatomic, readonly, copy) NSSet* connectedAccessories;
+@property (nonatomic, readonly, copy) NSSet* gestureRecognizers;
 
 @property (nonatomic) BOOL automaticallyRejectsPalmWhileDrawing;
-
-@property (nonatomic) BOOL allowsHoveringEvents;
+@property (nonatomic) BOOL showsHoveringMarks;
 @property (nonatomic) BOOL sendsEditingActions;
 
 @property (nonatomic, assign) UIResponder* firstResponder;
 
 + (CRAccessoryManager*)sharedManager;
+
+- (BOOL)addGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
+- (void)removeGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
 
 @end

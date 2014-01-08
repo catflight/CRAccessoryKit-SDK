@@ -17,11 +17,4 @@
 - (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 - (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 
-#if 0
-
-- (void)buttonDown:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
-- (void)buttonUp:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
-
-#endif
-
 @end

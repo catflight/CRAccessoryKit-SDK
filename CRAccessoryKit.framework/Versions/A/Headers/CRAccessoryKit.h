@@ -9,8 +9,15 @@
 #import <CRAccessoryKit/CRAccessory.h>
 #import <CRAccessoryKit/CRAccessoryManager.h>
 #import <CRAccessoryKit/CRDrawingEvent.h>
+#import <CRAccessoryKit/CRGestureRecognizer.h>
+#import <CRAccessoryKit/CRLongPressGestureRecognizer.h>
+#import <CRAccessoryKit/CRTapGestureRecognizer.h>
+#import <CRAccessoryKit/CRHoverGestureRecognizer.h>
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <CRAccessoryKit/UIViewDrawingAdditions.h>
+
+#import <CRAccessoryKit/OCR/CROCRViewController.h>
+
 #import <Foundation/Foundation.h>
 
 @interface CRAccessoryKit : NSObject

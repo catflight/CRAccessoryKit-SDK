@@ -37,4 +37,6 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) CRButtonState buttonState;
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
+@property (nonatomic, readonly) NSTimeInterval hoveringTime;
+
 @end
