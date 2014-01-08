@@ -130,3 +130,14 @@ iPad 4:
 1. __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
 2. __34f5dbe95db2f25087e550fffc16321cb7323e88__
 
+## Samples
+SDK ships with few samples to help start with it and to show possiblities of iPen2.
+
+### TextFieldIntegration
+This sample demonstrates how iPen2 could be used to show users hints of input fields. This could be useful in spreadship applications and applications with solid amount of text forms.
+<!-- MacBuildServer Install Button -->
+<div class="macbuildserver-block">
+    <a class="macbuildserver-button" href="http://macbuildserver.com/project/github/build/?xcode_project=Samples%2FTextFieldIntegration%2FTextFieldIntegration.xcodeproj&amp;target=TextFieldIntegration&amp;repo_url=git%3A%2F%2Fgithub.com.%2FCregle%2FCRAccessoryKit-SDK.git&amp;build_conf=Release" target="_blank"><img src="http://com.macbuildserver.github.s3-website-us-east-1.amazonaws.com/button_up.png"/></a><br/><sup><a href="http://macbuildserver.com/github/opensource/" target="_blank">by MacBuildServer</a></sup>
+</div>
+<!-- MacBuildServer Install Button -->
+
