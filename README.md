@@ -1,12 +1,11 @@
 # Cregle AccessoryKit SDK
-#### Documentation for version (0.3 alpha)
+#### Documentation for version (0.4 beta)
 
 ## Intro
 
 The Cregle AccessoryKit Framework provides support for [iPen2](http://www.cregle.com/pages/pressure-sensitive-stylus-for-your-imac-and-ipad) styluses.
 Applications that support iPen2 must integrate CRAccessoryKit.framework to communicate with stylus, and configure Info.plists according to instructions below.
-This SDK could be run both from Simulator and supported iOS Devices with CPU armv7 or armv7s. Sample code and SDK itself were built and tested with Xcode 4,
-but Xcode 3.2 is supported too. This version of SDK is built without authomatic reference counting (ARC). SDK supports iOS 5 and later.
+This SDK could be run both from Simulator and supported iOS Devices with CPU armv7(s) or arm64. Sample code and SDK itself were built and tested with Xcode 5. SDK supports iOS 6 and later.
 
 ## Integration
 
@@ -30,7 +29,9 @@ but Xcode 3.2 is supported too. This version of SDK is built without authomatic 
 	* If your project is written on pure C/Objective-C, you need also to add libstdc++.dylid library for gcc compiler or libc++.dylib (recommended) for clang compiler
 	* Follow steps from item 2 for required library to add it to your project
 
-4. Modify your Info.plist file to manifest __com.cregle.ipen2__ protocol support to iOS
+4. Check the __-ObjC__ flag is passed to linked (eg. via Other Linker Flags Xcode build setting) to allow internal classes to be instantiated properly.
+
+5. Modify your Info.plist file to manifest __com.cregle.ipen2__ protocol support to iOS
 	* Select your Project in the Project Navigator
 	* Select "main" target, typically it is your application
 	* Switch to the Info tab
@@ -38,7 +39,7 @@ but Xcode 3.2 is supported too. This version of SDK is built without authomatic 
 	* Select Supported external accessory protocols item in dropdown menu
 	* Add __com.cregle.ipen2__ item to the Supported external accessory protocols array
 
-5. In your code
+6. In your code
 	* call `[CRAccessoryKit start:];` as soon as you intend to work with iPen
 	* call `[CRAccessoryKit stop];` when you decide it's better to turn off accessory (e.g. to optimize power consumption)
 
@@ -47,11 +48,19 @@ Central class in CRAccessoryKit is CRAccessoryManager
 
 	@interface CRAccessoryManager : NSObject
 
-	@property (nonatomic, readonly) NSArray* connectedAccessories;
-	@property (nonatomic) BOOL allowsAccessoriesTriggerStandardActions;
+	@property (nonatomic, readonly, copy) NSSet* connectedAccessories;
+	@property (nonatomic, readonly, copy) NSSet* gestureRecognizers;
+
+	@property (nonatomic) BOOL automaticallyRejectsPalmWhileDrawing;
+	@property (nonatomic) BOOL showsHoveringMarks;
+	@property (nonatomic) BOOL sendsEditingActions;
+
 	@property (nonatomic, assign) UIResponder* firstResponder;
 
 	+ (CRAccessoryManager*)sharedManager;
+
+	- (BOOL)addGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
+	- (void)removeGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
 
 	@end
 
@@ -107,12 +116,17 @@ CRAccessory class instance corresponds to physically connected accessory. You co
 	@interface CRAccessory : NSObject
 
 	@property (nonatomic, readonly) NSString* identifier;
+	@property (nonatomic, readonly) NSString* penIdentifier;
+
 	@property (nonatomic, readonly) UIScreen* screen;
 
 	@property (nonatomic, readonly) float penPowerLevel;
 	@property (nonatomic, readonly) float receiverPowerLevel;
 
-	@property (nonatomic, readonly) NSUInteger buttonState;
+	@property (nonatomic, readonly) CRButtonState buttonState;
+	@property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
+
+	@property (nonatomic, readonly) NSTimeInterval hoveringTime;
 
 	@end
 
