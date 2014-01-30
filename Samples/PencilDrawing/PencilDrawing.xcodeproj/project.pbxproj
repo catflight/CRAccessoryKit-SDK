@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		612EB2C1189AE36A00F25471 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2C0189AE36A00F25471 /* Foundation.framework */; };
+		612EB2C3189AE36A00F25471 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2C2189AE36A00F25471 /* CoreGraphics.framework */; };
+		612EB2C5189AE36A00F25471 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2C4189AE36A00F25471 /* UIKit.framework */; };
+		612EB2CB189AE36A00F25471 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612EB2C9189AE36A00F25471 /* InfoPlist.strings */; };
+		612EB2CD189AE36A00F25471 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB2CC189AE36A00F25471 /* main.m */; };
+		612EB2D1189AE36A00F25471 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB2D0189AE36A00F25471 /* AppDelegate.m */; };
+		612EB2D4189AE36A00F25471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612EB2D2189AE36A00F25471 /* Main.storyboard */; };
+		612EB2D7189AE36A00F25471 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB2D6189AE36A00F25471 /* ViewController.m */; };
+		612EB2D9189AE36A00F25471 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612EB2D8189AE36A00F25471 /* Images.xcassets */; };
+		612EB2E0189AE36B00F25471 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2DF189AE36B00F25471 /* XCTest.framework */; };
+		612EB2E1189AE36B00F25471 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2C0189AE36A00F25471 /* Foundation.framework */; };
+		612EB2E2189AE36B00F25471 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2C4189AE36A00F25471 /* UIKit.framework */; };
+		612EB2EA189AE36B00F25471 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612EB2E8189AE36B00F25471 /* InfoPlist.strings */; };
+		612EB2EC189AE36B00F25471 /* PencilDrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB2EB189AE36B00F25471 /* PencilDrawingTests.m */; };
+		612EB2F6189AE42E00F25471 /* CRAccessoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2F5189AE42E00F25471 /* CRAccessoryKit.framework */; };
+		612EB2F7189AE42E00F25471 /* CRAccessoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2F5189AE42E00F25471 /* CRAccessoryKit.framework */; };
+		612EB2F9189AE4A300F25471 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2F8189AE4A300F25471 /* libc++.dylib */; };
+		612EB2FB189AE4AE00F25471 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2FA189AE4AE00F25471 /* ExternalAccessory.framework */; };
+		612EB2FC189AE51200F25471 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2FA189AE4AE00F25471 /* ExternalAccessory.framework */; };
+		612EB2FD189AE51A00F25471 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2F8189AE4A300F25471 /* libc++.dylib */; };
+		612EB2FF189AE56B00F25471 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2FE189AE56B00F25471 /* libz.dylib */; };
+		612EB300189AE57900F25471 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EB2FE189AE56B00F25471 /* libz.dylib */; };
+		612EB30B189AE68700F25471 /* CROpenGL.mm in Sources */ = {isa = PBXBuildFile; fileRef = 612EB304189AE68700F25471 /* CROpenGL.mm */; };
+		612EB30C189AE68700F25471 /* CROpenGL.mm in Sources */ = {isa = PBXBuildFile; fileRef = 612EB304189AE68700F25471 /* CROpenGL.mm */; };
+		612EB30D189AE68700F25471 /* CROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB306189AE68700F25471 /* CROpenGLView.m */; };
+		612EB30E189AE68700F25471 /* CROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB306189AE68700F25471 /* CROpenGLView.m */; };
+		612EB30F189AE68700F25471 /* CRTextureRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB308189AE68700F25471 /* CRTextureRenderer.m */; };
+		612EB310189AE68700F25471 /* CRTextureRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB308189AE68700F25471 /* CRTextureRenderer.m */; };
+		612EB311189AE68700F25471 /* texture2d.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB30A189AE68700F25471 /* texture2d.m */; };
+		612EB312189AE68700F25471 /* texture2d.m in Sources */ = {isa = PBXBuildFile; fileRef = 612EB30A189AE68700F25471 /* texture2d.m */; };
+		612EB314189AF41B00F25471 /* background_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 612EB313189AF41B00F25471 /* background_tile@2x.png */; };
+		612EB315189AF41B00F25471 /* background_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 612EB313189AF41B00F25471 /* background_tile@2x.png */; };
+		612EB317189AF45D00F25471 /* background_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 612EB316189AF45D00F25471 /* background_tile.png */; };
+		612EB318189AF45D00F25471 /* background_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 612EB316189AF45D00F25471 /* background_tile.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		612EB2E3189AE36B00F25471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 612EB2B5189AE36A00F25471 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 612EB2BC189AE36A00F25471;
+			remoteInfo = PencilDrawing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		612EB2BD189AE36A00F25471 /* PencilDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PencilDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		612EB2C0189AE36A00F25471 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		612EB2C2189AE36A00F25471 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		612EB2C4189AE36A00F25471 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		612EB2C8189AE36A00F25471 /* PencilDrawing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PencilDrawing-Info.plist"; sourceTree = "<group>"; };
+		612EB2CA189AE36A00F25471 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		612EB2CC189AE36A00F25471 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		612EB2CE189AE36A00F25471 /* PencilDrawing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PencilDrawing-Prefix.pch"; sourceTree = "<group>"; };
+		612EB2CF189AE36A00F25471 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		612EB2D0189AE36A00F25471 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		612EB2D3189AE36A00F25471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		612EB2D5189AE36A00F25471 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		612EB2D6189AE36A00F25471 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		612EB2D8189AE36A00F25471 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		612EB2DE189AE36B00F25471 /* PencilDrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PencilDrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		612EB2DF189AE36B00F25471 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		612EB2E7189AE36B00F25471 /* PencilDrawingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PencilDrawingTests-Info.plist"; sourceTree = "<group>"; };
+		612EB2E9189AE36B00F25471 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		612EB2EB189AE36B00F25471 /* PencilDrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PencilDrawingTests.m; sourceTree = "<group>"; };
+		612EB2F5189AE42E00F25471 /* CRAccessoryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CRAccessoryKit.framework; path = ../../CRAccessoryKit.framework; sourceTree = "<group>"; };
+		612EB2F8189AE4A300F25471 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		612EB2FA189AE4AE00F25471 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		612EB2FE189AE56B00F25471 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		612EB302189AE68700F25471 /* CRFrameBufferRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFrameBufferRenderer.h; sourceTree = "<group>"; };
+		612EB303189AE68700F25471 /* CROpenGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROpenGL.h; sourceTree = "<group>"; };
+		612EB304189AE68700F25471 /* CROpenGL.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CROpenGL.mm; sourceTree = "<group>"; };
+		612EB305189AE68700F25471 /* CROpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROpenGLView.h; sourceTree = "<group>"; };
+		612EB306189AE68700F25471 /* CROpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROpenGLView.m; sourceTree = "<group>"; };
+		612EB307189AE68700F25471 /* CRTextureRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTextureRenderer.h; sourceTree = "<group>"; };
+		612EB308189AE68700F25471 /* CRTextureRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTextureRenderer.m; sourceTree = "<group>"; };
+		612EB309189AE68700F25471 /* texture2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture2d.h; sourceTree = "<group>"; };
+		612EB30A189AE68700F25471 /* texture2d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = texture2d.m; sourceTree = "<group>"; };
+		612EB313189AF41B00F25471 /* background_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_tile@2x.png"; sourceTree = "<group>"; };
+		612EB316189AF45D00F25471 /* background_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_tile.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		612EB2BA189AE36A00F25471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB2FF189AE56B00F25471 /* libz.dylib in Frameworks */,
+				612EB2FB189AE4AE00F25471 /* ExternalAccessory.framework in Frameworks */,
+				612EB2F9189AE4A300F25471 /* libc++.dylib in Frameworks */,
+				612EB2C3189AE36A00F25471 /* CoreGraphics.framework in Frameworks */,
+				612EB2F6189AE42E00F25471 /* CRAccessoryKit.framework in Frameworks */,
+				612EB2C5189AE36A00F25471 /* UIKit.framework in Frameworks */,
+				612EB2C1189AE36A00F25471 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612EB2DB189AE36B00F25471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB300189AE57900F25471 /* libz.dylib in Frameworks */,
+				612EB2FD189AE51A00F25471 /* libc++.dylib in Frameworks */,
+				612EB2FC189AE51200F25471 /* ExternalAccessory.framework in Frameworks */,
+				612EB2E0189AE36B00F25471 /* XCTest.framework in Frameworks */,
+				612EB2F7189AE42E00F25471 /* CRAccessoryKit.framework in Frameworks */,
+				612EB2E2189AE36B00F25471 /* UIKit.framework in Frameworks */,
+				612EB2E1189AE36B00F25471 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		612EB2B4189AE36A00F25471 = {
+			isa = PBXGroup;
+			children = (
+				612EB301189AE68700F25471 /* Shared */,
+				612EB2C6189AE36A00F25471 /* PencilDrawing */,
+				612EB2E5189AE36B00F25471 /* PencilDrawingTests */,
+				612EB2BF189AE36A00F25471 /* Frameworks */,
+				612EB2BE189AE36A00F25471 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		612EB2BE189AE36A00F25471 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2BD189AE36A00F25471 /* PencilDrawing.app */,
+				612EB2DE189AE36B00F25471 /* PencilDrawingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		612EB2BF189AE36A00F25471 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2FE189AE56B00F25471 /* libz.dylib */,
+				612EB2FA189AE4AE00F25471 /* ExternalAccessory.framework */,
+				612EB2F8189AE4A300F25471 /* libc++.dylib */,
+				612EB2F5189AE42E00F25471 /* CRAccessoryKit.framework */,
+				612EB2C0189AE36A00F25471 /* Foundation.framework */,
+				612EB2C2189AE36A00F25471 /* CoreGraphics.framework */,
+				612EB2C4189AE36A00F25471 /* UIKit.framework */,
+				612EB2DF189AE36B00F25471 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		612EB2C6189AE36A00F25471 /* PencilDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2CF189AE36A00F25471 /* AppDelegate.h */,
+				612EB2D0189AE36A00F25471 /* AppDelegate.m */,
+				612EB2D2189AE36A00F25471 /* Main.storyboard */,
+				612EB2D5189AE36A00F25471 /* ViewController.h */,
+				612EB2D6189AE36A00F25471 /* ViewController.m */,
+				612EB316189AF45D00F25471 /* background_tile.png */,
+				612EB313189AF41B00F25471 /* background_tile@2x.png */,
+				612EB2D8189AE36A00F25471 /* Images.xcassets */,
+				612EB2C7189AE36A00F25471 /* Supporting Files */,
+			);
+			path = PencilDrawing;
+			sourceTree = "<group>";
+		};
+		612EB2C7189AE36A00F25471 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2C8189AE36A00F25471 /* PencilDrawing-Info.plist */,
+				612EB2C9189AE36A00F25471 /* InfoPlist.strings */,
+				612EB2CC189AE36A00F25471 /* main.m */,
+				612EB2CE189AE36A00F25471 /* PencilDrawing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		612EB2E5189AE36B00F25471 /* PencilDrawingTests */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2EB189AE36B00F25471 /* PencilDrawingTests.m */,
+				612EB2E6189AE36B00F25471 /* Supporting Files */,
+			);
+			path = PencilDrawingTests;
+			sourceTree = "<group>";
+		};
+		612EB2E6189AE36B00F25471 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				612EB2E7189AE36B00F25471 /* PencilDrawingTests-Info.plist */,
+				612EB2E8189AE36B00F25471 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		612EB301189AE68700F25471 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				612EB302189AE68700F25471 /* CRFrameBufferRenderer.h */,
+				612EB303189AE68700F25471 /* CROpenGL.h */,
+				612EB304189AE68700F25471 /* CROpenGL.mm */,
+				612EB305189AE68700F25471 /* CROpenGLView.h */,
+				612EB306189AE68700F25471 /* CROpenGLView.m */,
+				612EB307189AE68700F25471 /* CRTextureRenderer.h */,
+				612EB308189AE68700F25471 /* CRTextureRenderer.m */,
+				612EB309189AE68700F25471 /* texture2d.h */,
+				612EB30A189AE68700F25471 /* texture2d.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		612EB2BC189AE36A00F25471 /* PencilDrawing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612EB2EF189AE36B00F25471 /* Build configuration list for PBXNativeTarget "PencilDrawing" */;
+			buildPhases = (
+				612EB2B9189AE36A00F25471 /* Sources */,
+				612EB2BA189AE36A00F25471 /* Frameworks */,
+				612EB2BB189AE36A00F25471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PencilDrawing;
+			productName = PencilDrawing;
+			productReference = 612EB2BD189AE36A00F25471 /* PencilDrawing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		612EB2DD189AE36B00F25471 /* PencilDrawingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612EB2F2189AE36B00F25471 /* Build configuration list for PBXNativeTarget "PencilDrawingTests" */;
+			buildPhases = (
+				612EB2DA189AE36B00F25471 /* Sources */,
+				612EB2DB189AE36B00F25471 /* Frameworks */,
+				612EB2DC189AE36B00F25471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				612EB2E4189AE36B00F25471 /* PBXTargetDependency */,
+			);
+			name = PencilDrawingTests;
+			productName = PencilDrawingTests;
+			productReference = 612EB2DE189AE36B00F25471 /* PencilDrawingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		612EB2B5189AE36A00F25471 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Cregle;
+				TargetAttributes = {
+					612EB2DD189AE36B00F25471 = {
+						TestTargetID = 612EB2BC189AE36A00F25471;
+					};
+				};
+			};
+			buildConfigurationList = 612EB2B8189AE36A00F25471 /* Build configuration list for PBXProject "PencilDrawing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 612EB2B4189AE36A00F25471;
+			productRefGroup = 612EB2BE189AE36A00F25471 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				612EB2BC189AE36A00F25471 /* PencilDrawing */,
+				612EB2DD189AE36B00F25471 /* PencilDrawingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		612EB2BB189AE36A00F25471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB317189AF45D00F25471 /* background_tile.png in Resources */,
+				612EB314189AF41B00F25471 /* background_tile@2x.png in Resources */,
+				612EB2D9189AE36A00F25471 /* Images.xcassets in Resources */,
+				612EB2CB189AE36A00F25471 /* InfoPlist.strings in Resources */,
+				612EB2D4189AE36A00F25471 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612EB2DC189AE36B00F25471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB315189AF41B00F25471 /* background_tile@2x.png in Resources */,
+				612EB2EA189AE36B00F25471 /* InfoPlist.strings in Resources */,
+				612EB318189AF45D00F25471 /* background_tile.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		612EB2B9189AE36A00F25471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB2D7189AE36A00F25471 /* ViewController.m in Sources */,
+				612EB30F189AE68700F25471 /* CRTextureRenderer.m in Sources */,
+				612EB30B189AE68700F25471 /* CROpenGL.mm in Sources */,
+				612EB30D189AE68700F25471 /* CROpenGLView.m in Sources */,
+				612EB2D1189AE36A00F25471 /* AppDelegate.m in Sources */,
+				612EB311189AE68700F25471 /* texture2d.m in Sources */,
+				612EB2CD189AE36A00F25471 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612EB2DA189AE36B00F25471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612EB2EC189AE36B00F25471 /* PencilDrawingTests.m in Sources */,
+				612EB30E189AE68700F25471 /* CROpenGLView.m in Sources */,
+				612EB30C189AE68700F25471 /* CROpenGL.mm in Sources */,
+				612EB312189AE68700F25471 /* texture2d.m in Sources */,
+				612EB310189AE68700F25471 /* CRTextureRenderer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		612EB2E4189AE36B00F25471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 612EB2BC189AE36A00F25471 /* PencilDrawing */;
+			targetProxy = 612EB2E3189AE36B00F25471 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		612EB2C9189AE36A00F25471 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612EB2CA189AE36A00F25471 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		612EB2D2189AE36A00F25471 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612EB2D3189AE36A00F25471 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		612EB2E8189AE36B00F25471 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612EB2E9189AE36B00F25471 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		612EB2ED189AE36B00F25471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		612EB2EE189AE36B00F25471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		612EB2F0189AE36B00F25471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Disk3/Work/Remote/Sam/iPen2/iOS/CRAccessoryKit-SDK",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PencilDrawing/PencilDrawing-Prefix.pch";
+				INFOPLIST_FILE = "PencilDrawing/PencilDrawing-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		612EB2F1189AE36B00F25471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Disk3/Work/Remote/Sam/iPen2/iOS/CRAccessoryKit-SDK",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PencilDrawing/PencilDrawing-Prefix.pch";
+				INFOPLIST_FILE = "PencilDrawing/PencilDrawing-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		612EB2F3189AE36B00F25471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PencilDrawing.app/PencilDrawing";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Volumes/Disk3/Work/Remote/Sam/iPen2/iOS/CRAccessoryKit-SDK",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PencilDrawing/PencilDrawing-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PencilDrawingTests/PencilDrawingTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		612EB2F4189AE36B00F25471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PencilDrawing.app/PencilDrawing";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Volumes/Disk3/Work/Remote/Sam/iPen2/iOS/CRAccessoryKit-SDK",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PencilDrawing/PencilDrawing-Prefix.pch";
+				INFOPLIST_FILE = "PencilDrawingTests/PencilDrawingTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		612EB2B8189AE36A00F25471 /* Build configuration list for PBXProject "PencilDrawing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612EB2ED189AE36B00F25471 /* Debug */,
+				612EB2EE189AE36B00F25471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		612EB2EF189AE36B00F25471 /* Build configuration list for PBXNativeTarget "PencilDrawing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612EB2F0189AE36B00F25471 /* Debug */,
+				612EB2F1189AE36B00F25471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		612EB2F2189AE36B00F25471 /* Build configuration list for PBXNativeTarget "PencilDrawingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612EB2F3189AE36B00F25471 /* Debug */,
+				612EB2F4189AE36B00F25471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 612EB2B5189AE36A00F25471 /* Project object */;
+}
