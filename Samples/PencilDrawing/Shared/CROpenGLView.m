@@ -27,7 +27,7 @@
 	int _drawingCounter;
 }
 
-@synthesize backingHeight, backingWidth, context = _context;
+@synthesize backingHeight, backingWidth;
 
 + (Class)layerClass
 {
@@ -42,9 +42,7 @@
 	self.renderer = renderer;
 	_active = TRUE;
 
-    if (nil == _context)
-        _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
-    
+    _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
 	[EAGLContext setCurrentContext:_context];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationExecutionModeChanged:) name:UIApplicationWillResignActiveNotification object:nil];
@@ -97,7 +95,6 @@
 {
 	if (0 == _drawingCounter)
 	{
-        [EAGLContext setCurrentContext:_context];
         //setting up the draw content
         glBindFramebufferOES(GL_FRAMEBUFFER_OES, _framebuffer);
         
@@ -127,6 +124,7 @@
 	if (!_active || _dirty) return;
 	_dirty = TRUE;
 	dispatch_async(dispatch_get_main_queue(), ^{
+        [EAGLContext setCurrentContext:_context];
 		[self.renderer openGLViewRenderContent:self inRect:CGRectMake(0, 0, self.backingWidth, self.backingHeight)];
 		_dirty = NO;
 	});
@@ -137,6 +135,7 @@
 	if (!_active || _dirty) return;
 	_dirty = TRUE;
 	dispatch_async(dispatch_get_main_queue(), ^{
+        [EAGLContext setCurrentContext:_context];
         [self.renderer openGLViewRenderContent:self inRect:rect];
 		_dirty = NO;
 	});
@@ -146,9 +145,8 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
     
-	self.renderer = nil;
-    
     [EAGLContext setCurrentContext:_context];
+	self.renderer = nil;
 
 	// Tear down GL
 	if (_framebuffer)

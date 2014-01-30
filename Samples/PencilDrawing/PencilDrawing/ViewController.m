@@ -44,6 +44,7 @@
 
 - (void)drawIncrementally:(NSArray*)events
 {
+    [EAGLContext setCurrentContext:self.view.context];
 	[self.textureRenderer beginDraw];
 	
     glDisable(GL_TEXTURE_2D);
@@ -89,17 +90,8 @@
 
 - (void)eraseIncrementally:(NSArray*)events
 {
-	// erase to background
+    [EAGLContext setCurrentContext:self.view.context];
 	[self.textureRenderer beginDraw];
-	
-	CGPoint vertexes[6] = {
-		{.5, .5},
-		{0, 0},
-		{1, 0},
-		{1, 1},
-		{0, 1},
-		{0, 0}
-	};
 	
 	glDisable(GL_DEPTH_TEST);
 	glEnable(GL_ALPHA);

@@ -310,7 +310,7 @@
 
 @implementation Texture2D (Drawing)
 
-- (void) drawAtPoint:(CGPoint)point
+- (void)drawAtPoint:(CGPoint)point
 {
 	GLfloat		coordinates[] = {
 		_maxS, 0,
@@ -328,9 +328,7 @@
 		width / 2 + point.x,	height / 2 + point.y
     };
 
-    glDisable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
-
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
@@ -357,6 +355,11 @@
 		rect.origin.x + rect.size.width,		rect.origin.y
 	};
 	
+    glEnable(GL_TEXTURE_2D);
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisableClientState(GL_COLOR_ARRAY);
+
 	glBindTexture(GL_TEXTURE_2D, _name);
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
