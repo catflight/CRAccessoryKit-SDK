@@ -88,9 +88,6 @@ CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/i
 	- (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 	- (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
 
-	- (void)buttonDown:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
-	- (void)buttonUp:(NSUInteger)button ofAccessory:(CRAccessory*)accessory;
-	
 	@end
 
 `drawings` methods are related to corresponding `touches` methods of UIResponder, but being triggered on stylus actions instead of finger touches. For now it is no 'multi-draw' support)
@@ -108,7 +105,7 @@ Drawing event flow is similar to the touches' UIEvent flow - from UIWindow to it
 	@end
 
 In some cases default drawing events dispatching mechanism isn't effective. It could be in case drawing view is placed under another view completelly or partially or it's desired to handle events outside certain view, application uses non-visual UIResponders to handle events from iPen, etc. In these cases property [CRAccessoryManager firstResponder] could be set to point required object for events handling.
-If the firstResponder property isn't nil, CRAccessoryManager will route ALL events to this responder directly, without invocation of UIView based method to select firstResponder.
+If the firstResponder property isn't nil, CRAccessoryManager will route ALL events to this responder directly, without invocation of UIView based mechanism to select firstResponder.
 
 ### Statistics and monitoring
 CRAccessory class instance corresponds to physically connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
@@ -149,9 +146,6 @@ SDK ships with few samples to help start with it and to show possiblities of iPe
 
 ### TextFieldIntegration
 This sample demonstrates how iPen2 could be used to show users hints of input fields. This could be useful in spreadship applications and applications with solid amount of text forms.
-<!-- MacBuildServer Install Button -->
-<div class="macbuildserver-block">
-    <a class="macbuildserver-button" href="http://macbuildserver.com/project/github/build/?xcode_project=Samples%2FTextFieldIntegration%2FTextFieldIntegration.xcodeproj&amp;target=TextFieldIntegration&amp;repo_url=git%3A%2F%2Fgithub.com.%2FCregle%2FCRAccessoryKit-SDK.git&amp;build_conf=Release" target="_blank"><img src="http://com.macbuildserver.github.s3-website-us-east-1.amazonaws.com/button_up.png"/></a><br/><sup><a href="http://macbuildserver.com/github/opensource/" target="_blank">by MacBuildServer</a></sup>
-</div>
-<!-- MacBuildServer Install Button -->
 
+### PencilDrawing
+The sample demonstrates how it's intended to handle drawing events from iPen2. Main difference of UITouch and CRDrawingEvent is fact that UITouch is being generated not faster then display refresh, and so application gets one dot (in single touch mode) per frame. Many apps uses the 'touches' methods to refresh screen along with drawing state updating. iPen2 has higher report rate and so the 'drawings' methods receive several events (occured between screen refresh) per call. So it's good to optimize screen refresh logic and do it not faster then once per screen refresh to avoid performance penalty. In other words, drawing methods have to be ready to deal with several points per call.
