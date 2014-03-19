@@ -16,10 +16,6 @@
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <CRAccessoryKit/UIViewDrawingAdditions.h>
 
-#import <CRAccessoryKit/OCR/CROCRViewController.h>
-
-#import <Foundation/Foundation.h>
-
 @interface CRAccessoryKit : NSObject
 
 + (BOOL)start:(NSError**)error;
