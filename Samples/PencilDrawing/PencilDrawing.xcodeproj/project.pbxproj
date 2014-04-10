@@ -554,6 +554,7 @@
 				612EB2F1189AE36B00F25471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		612EB2F2189AE36B00F25471 /* Build configuration list for PBXNativeTarget "PencilDrawingTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +563,7 @@
 				612EB2F4189AE36B00F25471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
