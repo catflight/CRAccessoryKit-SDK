@@ -1,6 +1,6 @@
 //
 //  CRAccessory.h
-//  Calibrator
+//  CRAccessoryKit
 //
 //  Created by Boris Remizov on 4/21/13.
 //  Copyright (c) 2013 Cregle Inc. All rights reserved.
@@ -18,7 +18,16 @@ typedef enum CRSideButtonAction
 	CRSideButtonActionSave
 } CRSideButtonAction;
 
+
 typedef uint32_t CRButtonState;
+
+
+typedef enum CRPairingState
+{
+    CRPairingStateUnknown = 0,
+    CRPairingStatePaired,
+    CRPairingStateNotPaired
+} CRPairingState;
 
 
 extern float const CRPowerUndefined;
@@ -38,5 +47,7 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
 @property (nonatomic, readonly) NSTimeInterval hoveringTime;
+
+@property (nonatomic, readonly) CRPairingState pairingState;
 
 @end

@@ -15,6 +15,7 @@
 #import <CRAccessoryKit/CRHoverGestureRecognizer.h>
 #import <CRAccessoryKit/UIResponderDrawingAdditions.h>
 #import <CRAccessoryKit/UIViewDrawingAdditions.h>
+#import <CRAccessoryKit/CRStatusView.h>
 
 @interface CRAccessoryKit : NSObject
 

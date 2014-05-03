@@ -1,6 +1,6 @@
 //
 //  CRAccessoryManager.h
-//  Calibrator
+//  CRAccessoryKit
 //
 //  Created by Boris Remizov on 4/21/13.
 //  Copyright (c) 2013 Cregle Inc. All rights reserved.
