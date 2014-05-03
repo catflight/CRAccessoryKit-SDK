@@ -179,6 +179,8 @@
     // update screen
     [self.renderer openGLView:self didChangeScaleFactor:self.contentScaleFactor];
 	[self setNeedsDisplay];
+    
+    [super layoutSubviews];
 }
 
 - (BOOL)createFramebuffer
