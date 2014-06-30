@@ -1,0 +1,6 @@
+framework module CRAccessoryKit {
+  umbrella header "CRAccessoryKit.h"
+
+  export *
+  module * { export * }
+}
