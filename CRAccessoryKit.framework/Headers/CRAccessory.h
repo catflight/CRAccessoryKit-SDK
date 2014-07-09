@@ -41,7 +41,6 @@ extern float const CRPowerCharging;
 
 @property (nonatomic, readonly) UIScreen* screen;                       // screen accessory attached to
 
-@property (nonatomic, readonly) float penPowerLevel DEPRECATED_ATTRIBUTE;
 @property (nonatomic, readonly) float powerLevel;                       // [0; 1], or CRPowerUndefined, or CRPowerCharging
 
 @property (nonatomic, readonly) CRButtonState buttonState;              // bitmask of pressed buttons (bit0 is usually side button)
