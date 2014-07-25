@@ -54,7 +54,7 @@
 	glGenFramebuffersOES(1, &_framebuffer);
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, _framebuffer);
 	
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, self.name, 0);
+	glFramebufferTexture2DOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_TEXTURE_2D, self.name, 0);
 
     if (glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES)
 		NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
@@ -75,7 +75,7 @@
 {
 	if (0 == _drawingCounter)
 	{
-		glBindFramebuffer(GL_FRAMEBUFFER_OES, _framebuffer);
+		glBindFramebufferOES(GL_FRAMEBUFFER_OES, _framebuffer);
 		glViewport(0, 0, self.contentSize.width, self.contentSize.height);
 
 		glMatrixMode(GL_PROJECTION);
@@ -90,14 +90,14 @@
 	_drawingCounter--;
 	if (0 == _drawingCounter)
 	{
-		glBindFramebuffer(GL_FRAMEBUFFER_OES, 0);
+		glBindFramebufferOES(GL_FRAMEBUFFER_OES, 0);
 	}
 }
 
 - (void)dealloc
 {
     if (_framebuffer)
-        glDeleteFramebuffers(1, &_framebuffer);
+        glDeleteFramebuffersOES(1, &_framebuffer);
 }
 
 @end

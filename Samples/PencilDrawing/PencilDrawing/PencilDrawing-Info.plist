@@ -33,6 +33,7 @@
 	<key>UISupportedExternalAccessoryProtocols</key>
 	<array>
 		<string>com.cregle.ipen2</string>
+		<string>com.cregleipen.myProtocol</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

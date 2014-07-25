@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <CRAccessoryKit/CRAccessoryKit.h>
+@import CRAccessoryKit;
 
 @implementation AppDelegate
 

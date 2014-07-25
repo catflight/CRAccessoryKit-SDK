@@ -21,11 +21,11 @@
 		617FC4861830080B00548F6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC4651830080B00548F6F /* UIKit.framework */; };
 		617FC48E1830080B00548F6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 617FC48C1830080B00548F6F /* InfoPlist.strings */; };
 		617FC4901830080B00548F6F /* TextFieldIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 617FC48F1830080B00548F6F /* TextFieldIntegrationTests.m */; };
-		617FC49A1830095F00548F6F /* CRAccessoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC4991830095F00548F6F /* CRAccessoryKit.framework */; };
 		617FC49C18300C8B00548F6F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC49B18300C8B00548F6F /* ExternalAccessory.framework */; };
 		617FC49E18300CB500548F6F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC49D18300CB500548F6F /* libc++.dylib */; };
 		617FC4A018300CD400548F6F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC49F18300CD400548F6F /* libz.dylib */; };
 		617FC4A21830172900548F6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FC4A11830172900548F6F /* SystemConfiguration.framework */; };
+		61EBD19A1982FF82002B4EA1 /* CRAccessoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EBD1991982FF82002B4EA1 /* CRAccessoryKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +58,11 @@
 		617FC48B1830080B00548F6F /* TextFieldIntegrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TextFieldIntegrationTests-Info.plist"; sourceTree = "<group>"; };
 		617FC48D1830080B00548F6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		617FC48F1830080B00548F6F /* TextFieldIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldIntegrationTests.m; sourceTree = "<group>"; };
-		617FC4991830095F00548F6F /* CRAccessoryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CRAccessoryKit.framework; path = ../../CRAccessoryKit.framework; sourceTree = "<group>"; };
 		617FC49B18300C8B00548F6F /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		617FC49D18300CB500548F6F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		617FC49F18300CD400548F6F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		617FC4A11830172900548F6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		61EBD1991982FF82002B4EA1 /* CRAccessoryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CRAccessoryKit.framework; path = ../../CRAccessoryKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				617FC49E18300CB500548F6F /* libc++.dylib in Frameworks */,
 				617FC49C18300C8B00548F6F /* ExternalAccessory.framework in Frameworks */,
 				617FC4641830080B00548F6F /* CoreGraphics.framework in Frameworks */,
-				617FC49A1830095F00548F6F /* CRAccessoryKit.framework in Frameworks */,
+				61EBD19A1982FF82002B4EA1 /* CRAccessoryKit.framework in Frameworks */,
 				617FC4661830080B00548F6F /* UIKit.framework in Frameworks */,
 				617FC4621830080B00548F6F /* Foundation.framework in Frameworks */,
 			);
@@ -116,11 +116,11 @@
 		617FC4601830080B00548F6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61EBD1991982FF82002B4EA1 /* CRAccessoryKit.framework */,
 				617FC4A11830172900548F6F /* SystemConfiguration.framework */,
 				617FC49F18300CD400548F6F /* libz.dylib */,
 				617FC49D18300CB500548F6F /* libc++.dylib */,
 				617FC49B18300C8B00548F6F /* ExternalAccessory.framework */,
-				617FC4991830095F00548F6F /* CRAccessoryKit.framework */,
 				617FC4611830080B00548F6F /* Foundation.framework */,
 				617FC4631830080B00548F6F /* CoreGraphics.framework */,
 				617FC4651830080B00548F6F /* UIKit.framework */,
@@ -401,10 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Volumes/Disk3/Work/Remote/Sam/iPen2/CRAccessoryKit-SDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../..";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldIntegration/TextFieldIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldIntegration/TextFieldIntegration-Info.plist";
@@ -422,10 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Volumes/Disk3/Work/Remote/Sam/iPen2/CRAccessoryKit-SDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../..";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldIntegration/TextFieldIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldIntegration/TextFieldIntegration-Info.plist";
@@ -498,6 +492,7 @@
 				617FC4951830080B00548F6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		617FC4961830080B00548F6F /* Build configuration list for PBXNativeTarget "TextFieldIntegrationTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +501,7 @@
 				617FC4981830080B00548F6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -42,7 +42,7 @@
 
 #pragma mark - drawing primitives
 
-- (void)drawIncrementally:(NSArray*)events
+- (void)drawIncrementally:(CRDrawing*)drawing
 {
     [EAGLContext setCurrentContext:self.view.context];
 	[self.textureRenderer beginDraw];
@@ -53,36 +53,39 @@
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
-	for (CRDrawingEvent* drawing in events)
+    CRDrawingEvent* event = nil;
+	while (event = [drawing nextObject])
 	{
-		CGPoint location = [drawing locationInView:self.view];
+		CGPoint location = [event locationInView:self.view];
 		
         // convert UIKit coordinates to OpenGL coordinates
 		location.x *= self.view.window.screen.scale;
 		location.y *= self.view.window.screen.scale;
         
+        float pressure = event.tipPressure;     // for iPen1 it should be hardcoded to 1
+        
         if (CGPointEqualToPoint(_lastLocation, CGPointZero))
         {
-            glDefineColor([[UIColor blackColor] colorWithAlphaComponent:drawing.tipPressure].CGColor, 96);
+            glDefineColor([[UIColor blackColor] colorWithAlphaComponent:pressure].CGColor, 96);
             glDrawCircle(location, 1);
         }
         else
         {
-            glDefineColor([[UIColor darkGrayColor] colorWithAlphaComponent:_lastPressure].CGColor, 2);
-            glDefineColor([[UIColor darkGrayColor] colorWithAlphaComponent:drawing.tipPressure].CGColor, 1);
+            glDefineColor([[UIColor blackColor] colorWithAlphaComponent:_lastPressure].CGColor, 2);
+            glDefineColor([[UIColor blackColor] colorWithAlphaComponent:pressure].CGColor, 1);
             glDrawLine(location, self.lastLocation);
         }
 
         self.lastLocation = location;
-        self.lastPressure = drawing.tipPressure;
+        self.lastPressure = pressure;
     }
 	
 	[self.textureRenderer endDraw];
 }
 
-- (void)endDrawingIncrementally:(NSArray*)events
+- (void)endDrawingIncrementally:(CRDrawing*)drawing
 {
-    [self drawIncrementally:events];
+    [self drawIncrementally:drawing];
 
     self.lastPressure = 0;
     self.lastLocation = CGPointZero;
@@ -169,39 +172,40 @@
 // these methods are being invoked on main thread, synchronized with display link
 // the events array contains events accured between screen refresh
 
-- (void)drawingsBegan:(NSArray *)events withAccessory:(CRAccessory *)accessory
+- (void)stylus:(CRAccessory *)accessory didStartDrawing:(CRDrawing *)drawing
 {
-	if (0x01 & accessory.buttonState)
+    if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
         // side button pressed
-        [self eraseIncrementally:events];
+        [self eraseIncrementally:drawing.allObjects];
     else
-        [self drawIncrementally:events];
-
+        [self drawIncrementally:drawing];
+    
     // overloaded method of CROpenGLView
-	[self.view setNeedsDisplay];
+    [self.view setNeedsDisplay];
+    
 }
 
-- (void)drawingsMoved:(NSArray *)events withAccessory:(CRAccessory *)accessory
+- (void)stylus:(CRAccessory *)accessory continuesDrawing:(CRDrawing *)drawing
 {
-	if (0x01 & accessory.buttonState)
+    if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
     {
         // side button pressed
-        [self eraseIncrementally:events];
+        [self eraseIncrementally:drawing.allObjects];
     }
     else
-        [self drawIncrementally:events];
+        [self drawIncrementally:drawing];
 
     // overloaded method of CROpenGLView
 	[self.view setNeedsDisplay];
 }
 
-- (void)drawingsEnded:(NSArray *)events withAccessory:(CRAccessory *)accessory
+- (void)stylus:(CRAccessory *)accessory didEndDrawing:(CRDrawing *)drawing
 {
-	if (0x01 & accessory.buttonState)
+    if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
         // side button pressed
-        [self eraseIncrementally:events];
+        [self eraseIncrementally:drawing.allObjects];
     else
-        [self endDrawingIncrementally:events];
+        [self endDrawingIncrementally:drawing];
     
     // overloaded method of CROpenGLView
 	[self.view setNeedsDisplay];

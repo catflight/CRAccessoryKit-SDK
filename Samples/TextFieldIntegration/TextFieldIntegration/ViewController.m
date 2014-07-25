@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <CRAccessoryKit/CRAccessoryKit.h>
+@import CRAccessoryKit;
 
 @interface ViewController ()<UIPopoverControllerDelegate>
 
