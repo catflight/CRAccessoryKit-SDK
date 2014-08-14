@@ -1,5 +1,5 @@
 # Cregle AccessoryKit SDK
-#### Documentation for version (0.4 beta)
+#### Documentation for version (0.6 beta)
 
 ## Intro
 
@@ -84,15 +84,15 @@ CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/i
 
 	@interface UIResponder (UIResponderDrawingAdditions)
 	
-	- (void)drawingsBegan:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
-	- (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
-	- (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory;
+	- (void)stylus:(CRAccessory*)accessory didStartDrawing:(CRDrawing*)drawing;
+	- (void)stylus:(CRAccessory*)accessory continuesDrawing:(CRDrawing*)drawing;
+	- (void)stylus:(CRAccessory*)accessory didEndDrawing:(CRDrawing*)drawing;
 
 	@end
 
-`drawings` methods are related to corresponding `touches` methods of UIResponder, but being triggered on stylus actions instead of finger touches. For now it is no 'multi-draw' support)
-Each element in array passed to certain drawing callback method is instance of CRDrawingEvent, there are as mush elements in array as many reports (events) was received from stylus since previous method invocation (all callbacks are being called on main thread).
-`button` methods are close to desktop equivalent of UIResponder - [NSResponder](https://developer.apple.com/library/mac/#documentation/cocoa/reference/ApplicationKit/Classes/NSResponder_Class/Reference/Reference.html), and triggers when user presses corresponding buttons on accessory, regardless of tip location.
+`stylus:` methods are related to corresponding `touches` methods of UIResponder, but being triggered on stylus actions instead of finger touches. For now it is no 'multi-draw' support). The `CRDrawing` object keeps all information about drawing sequence (while stylus' tip is on surface); it conforms to [NSFastEnumeration](https://developer.apple.com/library/ios/documentation/cocoa/reference/NSFastEnumeration_protocol/Reference/NSFastEnumeration.html), so you could access currently reported events (CRDrawingEvent) with `nextObject` or `allObjects` methods. `nextObject`/`allObjects` return ONLY events associated with current call of certain method, previous events won't be enumerated in subsequent calls.
+
+All callbacks are being called on main thread.
 
 Default implementation of these methods calls corresponding method of `self.nextResponder` object. To handle certain actions you should override corresponding methods in your UIView or UIViewController subclass,
 no additinal registration required. Also you could implement your own UIResponder chains - messages will be delivered from responder to next one.
@@ -107,6 +107,20 @@ Drawing event flow is similar to the touches' UIEvent flow - from UIWindow to it
 In some cases default drawing events dispatching mechanism isn't effective. It could be in case drawing view is placed under another view completelly or partially or it's desired to handle events outside certain view, application uses non-visual UIResponders to handle events from iPen, etc. In these cases property [CRAccessoryManager firstResponder] could be set to point required object for events handling.
 If the firstResponder property isn't nil, CRAccessoryManager will route ALL events to this responder directly, without invocation of UIView based mechanism to select firstResponder.
 
+### Button events
+The SDK sends actions in similar to [UIApplication sendAction:to:from:forEvent:] manner. So to handle side button event, you have to implement corresponding method somewhere in UIResponder chain (usually it is UIViewController of "main" view):
+
+	- (IBAction)undo
+	- (IBAction)redo
+	- (IBAction)save
+	- (IBAction)erase
+
+Actions could have UIKit compatible signature, e.g. you could name your `redo` method in one of following ways:
+
+	- (IBAction)redo
+	- (IBAction)redo:(id)sender
+	- (IBAction)redo:(id)sender forEvent:(id)alwaysNil
+
 ### Statistics and monitoring
 CRAccessory class instance corresponds to physically connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
 
@@ -117,19 +131,20 @@ CRAccessory class instance corresponds to physically connected accessory. You co
 
 	@property (nonatomic, readonly) UIScreen* screen;
 
-	@property (nonatomic, readonly) float penPowerLevel;
-	@property (nonatomic, readonly) float receiverPowerLevel;
+	@property (nonatomic, readonly) float powerLevel;
 
 	@property (nonatomic, readonly) CRButtonState buttonState;
 	@property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
 	@property (nonatomic, readonly) NSTimeInterval hoveringTime;
 
+	@property (nonatomic, readonly) CRPairingState pairingState;
+
 	@end
 
 CRAccessory represents state of accessory to application, the `screen` property is screen the accessory attached to, most configurations have accessory attached to `[UIScreen mainScreen]`.
-`penPowerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty.
-`receiverPowerLevel` represents receiver's battery state, iPad models of iPen2 have no additional batteries in receiver modules.
+`powerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty. Special value `CRPowerCharging` means stylus is being charged (with USB power supply). Sometimes `CRPowerUndefined` could be returned.
+App properties are KVO compliant.
 
 ## Testing
 To allow Cregle help you debug CRAccessoryKit integration, improve it and fix certain incompatibilities could have place, please feel free to invite us to [TestFlight](https://testflightapp.com/) Beta Testing of your app.
