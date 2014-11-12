@@ -46,8 +46,6 @@ extern float const CRPowerCharging;
 @property (nonatomic, readonly) CRButtonState buttonState;              // bitmask of pressed buttons (bit0 is usually side button)
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
-@property (nonatomic, readonly) NSTimeInterval hoveringTime;
-
 @property (nonatomic, readonly) CRPairingState pairingState;
 
 @end

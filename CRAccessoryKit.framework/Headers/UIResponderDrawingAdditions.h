@@ -18,8 +18,4 @@
 - (void)stylus:(CRAccessory*)accessory continuesDrawing:(CRDrawing*)drawing;
 - (void)stylus:(CRAccessory*)accessory didEndDrawing:(CRDrawing*)drawing;
 
-- (void)drawingsBegan:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory UNAVAILABLE_ATTRIBUTE;
-- (void)drawingsMoved:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory UNAVAILABLE_ATTRIBUTE;
-- (void)drawingsEnded:(NSArray*)drawingEvents withAccessory:(CRAccessory*)accessory UNAVAILABLE_ATTRIBUTE;
-
 @end
