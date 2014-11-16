@@ -31,7 +31,6 @@ typedef enum CRPairingState
 
 
 extern float const CRPowerUndefined;
-extern float const CRPowerCharging;
 
 
 @interface CRAccessory : NSObject
@@ -41,7 +40,7 @@ extern float const CRPowerCharging;
 
 @property (nonatomic, readonly) UIScreen* screen;                       // screen accessory attached to
 
-@property (nonatomic, readonly) float powerLevel;                       // [0; 1], or CRPowerUndefined, or CRPowerCharging
+@property (nonatomic, readonly) float powerLevel;                       // [0; 1], or CRPowerUndefined
 
 @property (nonatomic, readonly) CRButtonState buttonState;              // bitmask of pressed buttons (bit0 is usually side button)
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
