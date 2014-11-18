@@ -1,5 +1,5 @@
 # Cregle AccessoryKit SDK
-#### Documentation for version (0.6 beta)
+#### Documentation for version (0.8 beta)
 
 ## Intro
 
@@ -62,10 +62,14 @@ Central class in CRAccessoryKit is CRAccessoryManager
 	- (BOOL)addGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
 	- (void)removeGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
 
+	- (BOOL)addExclusionView:(UIView*)touchEnabledView;
+	- (void)removeExclusionView:(UIView*)touchEnabledview;
+
 	@end
 
 There is only one instance of this class at a time in application, accessible via `+[CRAccessoryManager sharedManager]` method.
 You could use it co adjust behaviour of accessory, iterate over connected accessories (only one in virually all cases), and subscribe to accessory notifications.
+Also you could add some views (usually controls) to touch rejection exclusion list, so they'll be available even when touch rejection is active.
 
 ### Drawing events
 
@@ -136,15 +140,12 @@ CRAccessory class instance corresponds to physically connected accessory. You co
 	@property (nonatomic, readonly) CRButtonState buttonState;
 	@property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
-	@property (nonatomic, readonly) NSTimeInterval hoveringTime;
-
 	@property (nonatomic, readonly) CRPairingState pairingState;
 
 	@end
 
 CRAccessory represents state of accessory to application, the `screen` property is screen the accessory attached to, most configurations have accessory attached to `[UIScreen mainScreen]`.
-`powerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty. Special value `CRPowerCharging` means stylus is being charged (with USB power supply). Sometimes `CRPowerUndefined` could be returned.
-App properties are KVO compliant.
+`powerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty. Sometimes `CRPowerUndefined` could be returned. Accessory class properties are KVO compliant.
 
 ## Testing
 To allow Cregle help you debug CRAccessoryKit integration, improve it and fix certain incompatibilities could have place, please feel free to invite us to [TestFlight](https://testflightapp.com/) Beta Testing of your app.

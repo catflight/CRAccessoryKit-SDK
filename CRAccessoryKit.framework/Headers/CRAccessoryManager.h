@@ -19,16 +19,20 @@ extern NSString* const CRAccessoryDisconnectedNotification;
 
 @property (nonatomic, readonly, copy) NSSet* connectedAccessories;
 @property (nonatomic, readonly, copy) NSSet* gestureRecognizers;
+@property (nonatomic, readonly, copy) NSSet* exclusionViews;
 
 @property (nonatomic) BOOL automaticallyRejectsPalmWhileDrawing;
 @property (nonatomic) BOOL showsHoveringMarks;
 @property (nonatomic) BOOL sendsEditingActions;                     // if set, corresponding messages (save:, undo:, redo:, erase:) will be sent to app's firstResponder
 
-@property (nonatomic, assign) UIResponder* firstResponder;          // if set, object that receives All drawing and side button events (bypass of UIResponder chain)
+@property (nonatomic, assign) UIResponder* firstResponder;          // if set, object that receives All drawing and side button events (bypass UIResponder chain)
 
 + (CRAccessoryManager*)sharedManager;
 
 - (BOOL)addGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
 - (void)removeGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;
+
+- (BOOL)addExclusionView:(UIView*)touchEnabledView;
+- (void)removeExclusionView:(UIView*)touchEnabledview;
 
 @end
