@@ -5,7 +5,7 @@
 
 The Cregle AccessoryKit Framework provides support for [iPen2](http://www.cregle.com/pages/pressure-sensitive-stylus-for-your-imac-and-ipad) styluses.
 Applications that support iPen2 must integrate CRAccessoryKit.framework to communicate with stylus, and configure Info.plists according to instructions below.
-This SDK could be run both from Simulator and supported iOS Devices with CPU armv7(s) or arm64. Sample code and SDK itself were built and tested with Xcode 5. SDK supports iOS 6 and later.
+This SDK could be run both from Simulator and supported iOS Devices with CPU armv7(s) or arm64. Sample code and SDK itself were built and tested with Xcode 6.1. SDK supports iOS 6 and later.
 
 ## Integration
 
@@ -148,6 +148,12 @@ CRAccessory represents state of accessory to application, the `screen` property 
 `powerLevel` measures battery level of stylus: 1.0 means fully changed, 0.0 - empty. Sometimes `CRPowerUndefined` could be returned. Accessory class properties are KVO compliant.
 
 ## Testing
+Logs in the SDK are being controlled by following parameters in NSUserDefaults:
+1. CRLoggingEnabled - bool, parameter that turns logging on and off. Default is FALSE.
+2. CRLoggingRoot - string, specifing root folder logs will be stored to. Default logs folder is placed inside the Caches folder of app.
+
+It's required to have these parameters configured before call of the `[CRAccessoryKit start]` method.
+
 To allow Cregle help you debug CRAccessoryKit integration, improve it and fix certain incompatibilities could have place, please feel free to invite us to [TestFlight](https://testflightapp.com/) Beta Testing of your app.
 
 Devices for TestFlight Beta Testing
