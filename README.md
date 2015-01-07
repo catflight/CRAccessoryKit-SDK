@@ -73,7 +73,7 @@ Also you could add some views (usually controls) to touch rejection exclusion li
 
 ### Drawing events
 
-Drawing gestures of stylus are being delivered to application in CRDrawingEvent class instances. This class incapsulates all information about certain event:
+Drawing gestures of stylus are being delivered to application in CRDrawingEvent class instances. This class encapsulates all information about certain event:
 
 	@interface CRDrawingEvent : NSObject
 
@@ -84,7 +84,7 @@ Drawing gestures of stylus are being delivered to application in CRDrawingEvent 
 
 	@end
 
-CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIResponder_Class/Reference/Reference.html) based event delivering mechanisn. CRAccessoryKit extends the UIResponder class with following category:
+CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIResponder_Class/Reference/Reference.html) based event delivering mechanism. CRAccessoryKit extends the UIResponder class with following category:
 
 	@interface UIResponder (UIResponderDrawingAdditions)
 	
