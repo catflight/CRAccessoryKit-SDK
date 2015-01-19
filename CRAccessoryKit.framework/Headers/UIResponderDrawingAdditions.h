@@ -9,13 +9,13 @@
 #import <CRAccessoryKit/CRDrawingEvent.h>
 #import <UIKit/UIKit.h>
 
-@class CRAccessory;
+@protocol CRAccessory;
 @class CRDrawing;
 
 @interface UIResponder (UIResponderDrawingAdditions)
 
-- (void)stylus:(CRAccessory*)accessory didStartDrawing:(CRDrawing*)drawing;
-- (void)stylus:(CRAccessory*)accessory continuesDrawing:(CRDrawing*)drawing;
-- (void)stylus:(CRAccessory*)accessory didEndDrawing:(CRDrawing*)drawing;
+- (void)stylus:(id<CRAccessory>)accessory didStartDrawing:(CRDrawing*)drawing;
+- (void)stylus:(id<CRAccessory>)accessory continuesDrawing:(CRDrawing*)drawing;
+- (void)stylus:(id<CRAccessory>)accessory didEndDrawing:(CRDrawing*)drawing;
 
 @end

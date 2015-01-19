@@ -11,7 +11,7 @@
 
 @interface UIView (UIViewDrawingAdditions)
 
-- (UIView*)drawTest:(CGPoint)point withAccessory:(CRAccessory*)accessory;
-- (BOOL)drawingInside:(CGPoint)point withAccessory:(CRAccessory*)accessory;
+- (UIView*)drawTest:(CGPoint)point withAccessory:(id<CRAccessory>)accessory;
+- (BOOL)drawingInside:(CGPoint)point withAccessory:(id<CRAccessory>)accessory;
 
 @end

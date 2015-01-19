@@ -11,7 +11,8 @@
 
 typedef enum CRSideButtonAction
 {
-	CRSideButtonActionNone = 0,
+	CRSideButtonActionUnknown = -1,
+	CRSideButtonActionNone,
 	CRSideButtonActionUndo,
 	CRSideButtonActionRedo,
 	CRSideButtonActionErase,
@@ -33,7 +34,7 @@ typedef enum CRPairingState
 extern float const CRPowerUndefined;
 
 
-@interface CRAccessory : NSObject
+@protocol CRAccessory
 
 @property (nonatomic, readonly) NSString* identifier;
 @property (nonatomic, readonly) NSString* penIdentifier;
@@ -46,5 +47,10 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
 @property (nonatomic, readonly) CRPairingState pairingState;
+
+@end
+
+
+@interface CRAccessory : NSObject<CRAccessory>
 
 @end

@@ -172,7 +172,7 @@
 // these methods are being invoked on main thread, synchronized with display link
 // the events array contains events accured between screen refresh
 
-- (void)stylus:(CRAccessory *)accessory didStartDrawing:(CRDrawing *)drawing
+- (void)stylus:(id<CRAccessory>)accessory didStartDrawing:(CRDrawing*)drawing
 {
     if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
         // side button pressed
@@ -185,7 +185,7 @@
     
 }
 
-- (void)stylus:(CRAccessory *)accessory continuesDrawing:(CRDrawing *)drawing
+- (void)stylus:(id<CRAccessory>)accessory continuesDrawing:(CRDrawing*)drawing
 {
     if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
     {
@@ -199,7 +199,7 @@
 	[self.view setNeedsDisplay];
 }
 
-- (void)stylus:(CRAccessory *)accessory didEndDrawing:(CRDrawing *)drawing
+- (void)stylus:(id<CRAccessory>)accessory didEndDrawing:(CRDrawing*)drawing
 {
     if ((0x01 & accessory.buttonState) && CRSideButtonActionErase == accessory.sideButtonAction)
         // side button pressed
