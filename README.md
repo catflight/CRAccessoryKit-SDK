@@ -73,7 +73,7 @@ Also you could add some views (usually controls) to touch rejection exclusion li
 
 ### Drawing events
 
-Drawing gestures of stylus are being delivered to application in CRDrawingEvent class instances. This class incapsulates all information about certain event:
+Drawing gestures of stylus are being delivered to application in CRDrawingEvent class instances. This class encapsulates all information about certain event:
 
 	@interface CRDrawingEvent : NSObject
 
@@ -84,7 +84,7 @@ Drawing gestures of stylus are being delivered to application in CRDrawingEvent 
 
 	@end
 
-CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIResponder_Class/Reference/Reference.html) based event delivering mechanisn. CRAccessoryKit extends the UIResponder class with following category:
+CRAccessoryKit Framework uses [UIResponder](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIResponder_Class/Reference/Reference.html) based event delivering mechanism. CRAccessoryKit extends the UIResponder class with following category:
 
 	@interface UIResponder (UIResponderDrawingAdditions)
 	
@@ -125,6 +125,9 @@ Actions could have UIKit compatible signature, e.g. you could name your `redo` m
 	- (IBAction)redo:(id)sender
 	- (IBAction)redo:(id)sender forEvent:(id)alwaysNil
 
+### Palm Rejection
+The SDK comes with automatic palm rejection feature, turned on (default) with [CRAccessoryManager automaticallyRejectsPalmWhileDrawing] property set to TRUE. It is generic and universal mechanism, preventing any touches (not drawings) when stylus tip activity detected. Applications could decide to use or not to uses this mechanism in favour of their own palm rejection. It is also possible to leave some controls (e.g. buttons, palletes and so) touchable even within active drawing phase. To achieve this application should register these controls in exclusion list with [CRAccessoryManager addExclusionView:] method.
+
 ### Statistics and monitoring
 CRAccessory class instance corresponds to physically connected accessory. You could iterate over these objects via `[CRAccessoryManager sharedManager].connectedAccessories` property.
 
@@ -158,7 +161,7 @@ To allow Cregle help you debug CRAccessoryKit integration, improve it and fix ce
 
 Devices for TestFlight Beta Testing
 
-iPad 4:
+iPads:
 
 1. __1d6c2b8afa8952dcd23c52ce799f57b40fffa93f__
 2. __34f5dbe95db2f25087e550fffc16321cb7323e88__
