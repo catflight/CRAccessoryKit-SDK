@@ -27,6 +27,8 @@ extern NSString* const CRAccessoryDisconnectedNotification;
 
 @property (nonatomic, assign) UIResponder* firstResponder;          // if set, object that receives All drawing and side button events (bypass UIResponder chain)
 
+@property (nonatomic, copy) UIColor* hoverSignColor;
+
 + (CRAccessoryManager*)sharedManager;
 
 - (BOOL)addGestureRecognizer:(CRGestureRecognizer*)gestureRecognizer;

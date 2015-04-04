@@ -36,6 +36,8 @@ extern float const CRPowerUndefined;
 
 @protocol CRAccessory
 
+@property (nonatomic, readonly) NSString* name;
+
 @property (nonatomic, readonly) NSString* identifier;
 @property (nonatomic, readonly) NSString* penIdentifier;
 
@@ -46,7 +48,7 @@ extern float const CRPowerUndefined;
 @property (nonatomic, readonly) CRButtonState buttonState;              // bitmask of pressed buttons (bit0 is usually side button)
 @property (nonatomic, readonly) CRSideButtonAction sideButtonAction;
 
-@property (nonatomic, readonly) CRPairingState pairingState;
+@property (nonatomic, readonly) CRPairingState pairingState DEPRECATED_ATTRIBUTE;
 
 @end
 
